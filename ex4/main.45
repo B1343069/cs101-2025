@@ -1,0 +1,16 @@
+#include <stdio.h>
+void tower(int n, char form ,char to, char aux){
+    if (n==1){
+        printf("\n move disk %d form %c to rod %c ", n,form,to);
+        return;
+    }
+    tower(n-1,form,aux,to);
+    printf("\n move disk %d form %c to rod %c ", n,form,to);
+    tower(n-1,aux,to,form);
+}
+
+int main(){
+    int n=3;
+    tower(n,'a','b','c');
+    return 0;
+}
